@@ -2,6 +2,7 @@ import React from "react";
 import TodoList from "./components/TodoComponents/TodoList.js";
 import TodoForm from "./components/TodoComponents/TodoForm.js";
 import "./components/TodoComponents/Todo.css";
+import moment from 'moment'
 
 const todosArray = [];
 
@@ -20,26 +21,17 @@ class App extends React.Component {
 
   addTodo = ev => {
     ev.preventDefault();
-    // this.setState(currentState => {
-    //   return {
-    //     todoList: currentState.todoList.concat({
-    //       todotitle: this.state.titlevalue,
-    //       id: Date.now(),
-    //       completed: false,
-    //     }),
-    //     titlevalue: ''
-    //   };
-    // })
-    this.setState({
-      todoList: [
-        ...this.state.todoList,
-        { todotitle: this.state.titlevalue, 
+    this.setState(currentState => {
+      return {
+        todoList: currentState.todoList.concat({
+          todotitle: this.state.titlevalue,
           id: Date.now(),
-          date: '', 
-          completed: false }
-      ],
-      titlevalue: ''
-    });
+          date: new moment().format("MMMM Do YYYY, h:mm:ss a"),
+          completed: false,
+        }),
+        titlevalue: ''
+      };
+    })
   };
 
   // you will need a place to store your state in this component.
@@ -48,7 +40,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Todo List: MVP TitleValue is: {this.state.titlevalue}</h1>
+        <h1>Todo List:</h1>
         <TodoList wholeTodoList={this.state.todoList} />
         <TodoForm
           addtodo={this.addTodo}

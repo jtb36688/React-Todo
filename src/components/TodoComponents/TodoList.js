@@ -5,7 +5,7 @@ function TodoList(props) {
   return (
     <div>
       {props.wholeTodoList.map(todo => {
-        return <Todo todos={todo} key={todo.title} />;
+        return <Todo todos={todo} key={todo.id} />;
       })}
     </div>
   );
