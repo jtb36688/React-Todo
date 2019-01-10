@@ -5,6 +5,15 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+.SoleTodoCompleted {
+    border: 2px solid grey;
+    color: grey;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Comic Sans MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+}
+
 .TodoTitle {
     margin: 20px 0;
     text-decoration: underline;
