@@ -1,9 +1,9 @@
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList.js";
 import TodoForm from "./components/TodoComponents/TodoForm.js";
-import './components/TodoComponents/Todo.css'
+import "./components/TodoComponents/Todo.css";
 
-const todosArray = []
+const todosArray = [];
 
 class App extends React.Component {
   constructor() {
@@ -20,15 +20,25 @@ class App extends React.Component {
 
   addTodo = ev => {
     ev.preventDefault();
-    this.setState(currentState => {
-      return {
-        todoList: currentState.todoList.concat({
-          todotitle: this.state.titlevalue,
+    // this.setState(currentState => {
+    //   return {
+    //     todoList: currentState.todoList.concat({
+    //       todotitle: this.state.titlevalue,
+    //       id: Date.now(),
+    //       completed: false,
+    //     }),
+    //     titlevalue: ''
+    //   };
+    // })
+    this.setState({
+      todoList: [
+        ...this.state.todoList,
+        { todotitle: this.state.titlevalue, 
           id: Date.now(),
-          completed: false,
-        }),
-        titlevalue: ""
-      };
+          date: '', 
+          completed: false }
+      ],
+      titlevalue: ''
     });
   };
 
@@ -38,11 +48,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Todo List: MVP</h1>
+        <h1>Todo List: MVP TitleValue is: {this.state.titlevalue}</h1>
         <TodoList wholeTodoList={this.state.todoList} />
-        <TodoForm addtodo={this.addTodo} 
-        todotitle={this.state.titlevalue}
-        handleChanges={this.handleChanges} 
+        <TodoForm
+          addtodo={this.addTodo}
+          todotitle={this.state.titlevalue}
+          handleChanges={this.handleChanges}
         />
       </div>
     );
