@@ -1,19 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
 .SoleTodo {
     border: 2px solid silver;
     text-align: center;
+    padding: 10px 0;
     margin-top: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .SoleTodoCompleted {
-    border: 2px solid grey;
+    border: 2px solid silver;
     color: grey;
+    padding: 10px 0;
     text-align: center;
     margin-top: 10px;
-    font-family: 'Comic Sans MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 
 }
+.IncompleteBorder {
+    margin: 0 40% 0;
+    padding-top: 10px;
+    border: 1px dotted red;
+}
 
+.CompleteBorder {
+    margin: 0 40% 0;
+    padding-top: 10px;
+    border: 1px dotted green;
+}
 .TodoTitle {
     margin: 20px 0;
     text-decoration: underline;

@@ -12,7 +12,8 @@ function Todo(props) {
     >
       <div className="Date">Added on: {props.todos.date}</div>
       <div className="TodoTitle">{props.todos.todotitle}</div>
-      <div>Completed:{completedtext}</div>
+      <div className = {todocomplete? "CompleteBorder" : "IncompleteBorder"}
+      >Completed:{completedtext}</div>
     </div>
   );
 }
