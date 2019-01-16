@@ -2,6 +2,18 @@
     box-sizing: border-box;
 }
 
+.MinComplete {
+    border: 2px solid silver;
+    text-align: center;
+    color: green;
+}
+
+.MinIncomplete {
+    border: 2px solid silver;
+    text-align: center;
+    color: red;
+}
+
 .SoleTodo {
     border: 2px solid silver;
     text-align: center;
