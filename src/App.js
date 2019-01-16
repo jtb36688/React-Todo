@@ -4,13 +4,12 @@ import TodoForm from "./components/TodoComponents/TodoForm.js";
 import "./components/TodoComponents/Todo.css";
 import moment from "moment";
 
-var todoList = JSON.parse(localStorage.getItem("todoList"));
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todoList,
+      todoList: [],
       titlevalue: "",
       checkbox: true
     };
@@ -68,6 +67,13 @@ class App extends React.Component {
       return { 
         checkbox: !currentState.checkbox }
     })
+  }
+  componentDidMount() {
+    if (localStorage.getItem("todoList")) {
+      this.setState({
+        todoList: JSON.parse(localStorage.getItem("todoList"))
+      })
+    }
   }
 
   componentDidUpdate() {
